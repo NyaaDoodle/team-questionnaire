@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://pu2s4p5ng81c"]
+
+[ext_resource type="PackedScene" uid="uid://ceupqo10wixr6" path="res://scenes/answer_button.tscn" id="1_d5co2"]
+[ext_resource type="PackedScene" uid="uid://bp6u0j0q436i0" path="res://scenes/question_label.tscn" id="2_ynd44"]
+
+[node name="QuestionScreen" type="Node2D" unique_id=349450631]
+
+[node name="AnswerButtons" type="Node" parent="." unique_id=1641802543]
+
+[node name="AnswerButton" parent="AnswerButtons" unique_id=1327887747 instance=ExtResource("1_d5co2")]
+offset_left = -860.0
+offset_top = 70.0
+offset_right = -60.0
+offset_bottom = 370.0
+text = "Button1
+"
+
+[node name="AnswerButton2" parent="AnswerButtons" unique_id=158550015 instance=ExtResource("1_d5co2")]
+offset_left = 60.0
+offset_top = 70.0
+offset_right = 860.0
+offset_bottom = 370.0
+text = "Button2
+"
+
+[node name="QuestionLabel" parent="." unique_id=343454502 instance=ExtResource("2_ynd44")]
+offset_left = -860.0
+offset_top = -450.0
+offset_right = 860.0
+offset_bottom = -48.0

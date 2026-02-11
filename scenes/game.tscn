@@ -1,32 +1,16 @@
-[gd_scene format=3 uid="uid://pu2s4p5ng81c"]
+[gd_scene format=3 uid="uid://cl8oaf628nrxd"]
 
-[ext_resource type="PackedScene" uid="uid://ceupqo10wixr6" path="res://scenes/answer_button.tscn" id="1_uwrxv"]
-[ext_resource type="PackedScene" uid="uid://bp6u0j0q436i0" path="res://scenes/question_label.tscn" id="2_yqjtg"]
+[ext_resource type="Script" uid="uid://du0qqdsqcc1fr" path="res://scripts/game_manager.gd" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://c02011oliw4j1" path="res://scenes/results_screen.tscn" id="2_yqjtg"]
+[ext_resource type="Script" uid="uid://b2b2as10mfxhp" path="res://scripts/screen_loader.gd" id="3_lnu2h"]
 
-[node name="Game" type="Node2D" unique_id=349450631]
+[node name="Game" type="Node2D" unique_id=778614730]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1901648691]
+[node name="GameManager" type="Node" parent="." unique_id=691375986]
+script = ExtResource("1_uwrxv")
 
-[node name="AnswerButtons" type="Node" parent="." unique_id=1641802543]
+[node name="ScreenLoader" type="Node" parent="GameManager" unique_id=1471045446]
+script = ExtResource("3_lnu2h")
+initial_scene = ExtResource("2_yqjtg")
 
-[node name="AnswerButton" parent="AnswerButtons" unique_id=158550015 instance=ExtResource("1_uwrxv")]
-offset_left = 60.0
-offset_top = 50.0
-offset_right = 860.0
-offset_bottom = 350.0
-text = "Correct
-"
-
-[node name="AnswerButton2" parent="AnswerButtons" unique_id=1327887747 instance=ExtResource("1_uwrxv")]
-offset_left = -860.0
-offset_top = 50.0
-offset_right = -60.0
-offset_bottom = 350.0
-text = "Incorrect
-"
-
-[node name="QuestionLabel" parent="." unique_id=343454502 instance=ExtResource("2_yqjtg")]
-offset_left = -860.0
-offset_top = -450.0
-offset_right = 860.0
-offset_bottom = -48.0
+[node name="Camera2D" type="Camera2D" parent="." unique_id=409003338]

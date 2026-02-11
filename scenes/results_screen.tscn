@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://c02011oliw4j1"]
+
+[node name="ResultsScreen" type="Node2D" unique_id=1773471176]
+
+[node name="LeftHandLabel" type="Label" parent="." unique_id=1362014039]
+offset_left = -300.0
+offset_top = -164.0
+offset_right = -151.0
+offset_bottom = 164.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 240
+text = "X"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MiddleLabel" type="Label" parent="." unique_id=174436527]
+offset_left = -38.0
+offset_top = -180.0
+offset_right = 39.0
+offset_bottom = 148.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 240
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightHandLabel" type="Label" parent="." unique_id=743739724]
+offset_left = 151.0
+offset_top = -164.0
+offset_right = 300.0
+offset_bottom = 164.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 240
+text = "X"
+horizontal_alignment = 1
+vertical_alignment = 1

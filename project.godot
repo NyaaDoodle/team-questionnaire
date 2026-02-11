@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TeamQuestionnaire"
-run/main_scene="uid://pu2s4p5ng81c"
+run/main_scene="uid://cl8oaf628nrxd"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
