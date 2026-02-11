@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dpe0kjenafnrd"]
+
+[ext_resource type="Script" uid="uid://dffyooio78dai" path="res://scripts/auto_font_size_label.gd" id="1_gsl8i"]
+
+[node name="AutoFontSizeLabel" type="Label" unique_id=466382321]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_gsl8i")

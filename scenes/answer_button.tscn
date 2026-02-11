@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ceupqo10wixr6"]
+
+[node name="AnswerButton" type="Button" unique_id=158550015]
+offset_right = 800.0
+offset_bottom = 300.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "Text"
