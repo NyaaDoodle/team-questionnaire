@@ -14,7 +14,13 @@ func show_result_screen(left_hand_score: int, right_hand_score: int) -> void:
 	current_screen.request_close.connect(close_current_screen)
 	add_child(current_screen)
 	current_screen.setup(left_hand_score, right_hand_score)
+	
+func show_question_screen(question_string: String,
+						  left_button_string: String,
+						  right_button_string: String,
+						  background_color: Color):
+	pass
 
 func close_current_screen() -> void:
 	if is_instance_valid(current_screen):
-		current_screen.close()
+		current_screen.queue_free()
