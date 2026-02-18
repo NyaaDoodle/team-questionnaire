@@ -1,15 +1,27 @@
 [gd_scene format=3 uid="uid://c02011oliw4j1"]
 
 [ext_resource type="Script" uid="uid://be2auxdr5rffm" path="res://scripts/results_screen.gd" id="1_fqf1x"]
+[ext_resource type="PackedScene" uid="uid://cvdnvnn6ox8xo" path="res://scenes/background_panel.tscn" id="2_j5vbe"]
 
-[node name="ResultsScreen" type="Node2D" unique_id=1773471176]
+[node name="ResultsScreen" type="Control" unique_id=1988519210]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_fqf1x")
 
+[node name="BackgroundPanel" parent="." unique_id=1545657533 instance=ExtResource("2_j5vbe")]
+layout_mode = 0
+anchors_preset = 0
+
 [node name="LeftHandLabel" type="Label" parent="." unique_id=1362014039]
-offset_left = -600.0
-offset_top = -164.0
-offset_right = -150.0
-offset_bottom = 164.0
+layout_mode = 0
+offset_left = 360.0
+offset_top = 376.0
+offset_right = 810.0
+offset_bottom = 704.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 240
@@ -18,10 +30,11 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="MiddleLabel" type="Label" parent="." unique_id=174436527]
-offset_left = -38.0
-offset_top = -180.0
-offset_right = 39.0
-offset_bottom = 148.0
+layout_mode = 0
+offset_left = 922.0
+offset_top = 360.0
+offset_right = 999.0
+offset_bottom = 688.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 240
@@ -30,10 +43,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RightHandLabel" type="Label" parent="." unique_id=743739724]
-offset_left = 150.0
-offset_top = -164.0
-offset_right = 600.0
-offset_bottom = 164.0
+layout_mode = 0
+offset_left = 1110.0
+offset_top = 376.0
+offset_right = 1560.0
+offset_bottom = 704.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 240

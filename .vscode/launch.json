@@ -23,7 +23,7 @@
             "address": "127.0.0.1",
             "port": 6007,
             "scene": "main",
-            "editor_path": "<path>",
+            "editor_path": "E:\\Moebius\\Programs\\Godot 4.6\\Godot_v4.6-stable_win64.exe",
             // engine command line flags
             "profiling": false,
             "single_threaded_scene": false,

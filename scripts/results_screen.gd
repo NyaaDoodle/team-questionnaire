@@ -1,4 +1,4 @@
-extends GameScreen
+class_name ResultsScreen extends GameScreen
 
 @onready var left_hand_label: Label = $LeftHandLabel
 @onready var right_hand_label: Label = $RightHandLabel
