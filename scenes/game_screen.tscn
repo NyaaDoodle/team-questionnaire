@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ip2oi856vbte"]
+
+[ext_resource type="Script" uid="uid://iykc4x33klmw" path="res://scripts/game_screen.gd" id="1_8mhku"]
+
+[node name="GameScreen" type="Control" unique_id=1203653477]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8mhku")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1039602536]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

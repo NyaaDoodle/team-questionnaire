@@ -2,29 +2,16 @@ class_name ScreenLoader extends Node
 
 signal game_screen_closed
 
-@export var initial_scene: PackedScene
 @export var result_screen_scene: PackedScene
 @export var question_screen_scene: PackedScene
 
 var current_screen: GameScreen
 
-func _ready() -> void:
-	var question: Question = Question.new()
-	question.question_string = "Test Question String"
-	question.left_answer_string = "Correct"
-	question.right_answer_string = "לא נכון"
-	question.correct_answer = Question.AnswerChoice.LeftAnswer
-	var team: TeamData = TeamData.new()
-	team.id = 1
-	team.name = "a"
-	team.color = Color.WHITE
-	team.questions = []
-	show_question_screen(question, team)
-
 func spawn_screen(screen_scene: PackedScene) -> void:
+	# Spawns a GameScreen based scene. No inititalization of the spawned screen is done.
 	close_current_screen()
 	current_screen = screen_scene.instantiate()
-	current_screen.request_close.connect(close_current_screen)
+	current_screen.requested_close.connect(close_current_screen)
 	add_child(current_screen)
 
 func show_result_screen(left_hand_score: int, right_hand_score: int) -> void:

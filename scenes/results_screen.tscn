@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://c02011oliw4j1"]
 
 [ext_resource type="Script" uid="uid://be2auxdr5rffm" path="res://scripts/results_screen.gd" id="1_fqf1x"]
-[ext_resource type="PackedScene" uid="uid://cvdnvnn6ox8xo" path="res://scenes/background_panel.tscn" id="2_j5vbe"]
 
-[node name="ResultsScreen" type="Control" unique_id=1988519210]
+[node name="ResultsScreen" type="Control" unique_id=584599422]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,11 +11,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fqf1x")
 
-[node name="BackgroundPanel" parent="." unique_id=1545657533 instance=ExtResource("2_j5vbe")]
-layout_mode = 0
-anchors_preset = 0
+[node name="Background" type="ColorRect" parent="." unique_id=978864043]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
-[node name="LeftHandLabel" type="Label" parent="." unique_id=1362014039]
+[node name="LeftHandLabel" type="Label" parent="." unique_id=534261608]
 layout_mode = 0
 offset_left = 360.0
 offset_top = 376.0
@@ -29,7 +34,7 @@ text = "X"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="MiddleLabel" type="Label" parent="." unique_id=174436527]
+[node name="MiddleLabel" type="Label" parent="." unique_id=782066004]
 layout_mode = 0
 offset_left = 922.0
 offset_top = 360.0
@@ -42,7 +47,7 @@ text = "-"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RightHandLabel" type="Label" parent="." unique_id=743739724]
+[node name="RightHandLabel" type="Label" parent="." unique_id=557710503]
 layout_mode = 0
 offset_left = 1110.0
 offset_top = 376.0

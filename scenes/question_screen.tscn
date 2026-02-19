@@ -2,10 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://ceupqo10wixr6" path="res://scenes/answer_button.tscn" id="1_d5co2"]
 [ext_resource type="Script" uid="uid://d18r2idky4wwt" path="res://scripts/question_screen.gd" id="1_ynd44"]
-[ext_resource type="PackedScene" uid="uid://cvdnvnn6ox8xo" path="res://scenes/background_panel.tscn" id="2_ufqmp"]
 [ext_resource type="PackedScene" uid="uid://bp6u0j0q436i0" path="res://scenes/question_label.tscn" id="2_ynd44"]
 
-[node name="QuestionScreen" type="Control" unique_id=2017284531]
+[node name="QuestionScreen" type="Control" unique_id=1339995082]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,11 +13,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ynd44")
 
-[node name="BackgroundPanel" parent="." unique_id=1545657533 instance=ExtResource("2_ufqmp")]
-layout_mode = 0
-anchors_preset = 0
+[node name="Background" type="ColorRect" parent="." unique_id=1699290008]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
-[node name="LeftAnswerButton" parent="." unique_id=1327887747 instance=ExtResource("1_d5co2")]
+[node name="LeftAnswerButton" parent="." unique_id=158550015 instance=ExtResource("1_d5co2")]
 layout_mode = 0
 offset_left = 100.0
 offset_top = 610.0
@@ -28,7 +33,7 @@ theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
 text = "LeftButton
 "
 
-[node name="RightAnswerButton" parent="." unique_id=158550015 instance=ExtResource("1_d5co2")]
+[node name="RightAnswerButton" parent="." unique_id=846418049 instance=ExtResource("1_d5co2")]
 layout_mode = 0
 offset_left = 1020.0
 offset_top = 610.0

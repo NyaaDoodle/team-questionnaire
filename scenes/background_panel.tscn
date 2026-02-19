@@ -1,6 +1,20 @@
 [gd_scene format=3 uid="uid://cvdnvnn6ox8xo"]
 
-[ext_resource type="Script" uid="uid://dm77bpgbaibri" path="res://scripts/background_panel.gd" id="1_15me2"]
+[sub_resource type="GDScript" id="GDScript_ton72"]
+script/source = "class_name BackgroundPanel extends Panel
+
+@export var initial_color: Color
+var style_box: StyleBoxFlat
+
+func _ready() -> void:
+	style_box = StyleBoxFlat.new()
+	style_box.bg_color = initial_color
+	add_theme_stylebox_override(\"panel\", style_box)
+
+func change_color(color: Color) -> void:
+	style_box.bg_color = color
+	add_theme_stylebox_override(\"panel\", style_box)
+"
 
 [node name="BackgroundPanel" type="Panel" unique_id=1545657533]
 z_index = -10
@@ -9,4 +23,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_15me2")
+script = SubResource("GDScript_ton72")
