@@ -29,7 +29,12 @@ offset_left = 100.0
 offset_top = 610.0
 offset_right = 900.0
 offset_bottom = 910.0
-theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 text = "LeftButton
 "
 
@@ -39,8 +44,22 @@ offset_left = 1020.0
 offset_top = 610.0
 offset_right = 1820.0
 offset_bottom = 910.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 text = "RightButton
 "
+
+[node name="QuestionBackground" type="ColorRect" parent="." unique_id=2010451291]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 90.0
+offset_right = 1820.0
+offset_bottom = 492.0
+color = Color(0.039215688, 0.039215688, 0.039215688, 0.39215687)
 
 [node name="QuestionLabel" parent="." unique_id=343454502 instance=ExtResource("2_ynd44")]
 layout_mode = 0
