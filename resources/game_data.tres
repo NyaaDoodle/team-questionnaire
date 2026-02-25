@@ -1,0 +1,71 @@
+[gd_resource type="Resource" script_class="GameData" format=3 uid="uid://cs5ky8mq8tri2"]
+
+[ext_resource type="Script" uid="uid://c72hvg43lbvl8" path="res://scripts/game_data.gd" id="1_bhaot"]
+[ext_resource type="Script" uid="uid://ca7rrq5fcl3ml" path="res://scripts/team.gd" id="2_jhr64"]
+[ext_resource type="Script" uid="uid://damv0gpmxa036" path="res://scripts/question.gd" id="3_jhr64"]
+
+[sub_resource type="Resource" id="Resource_yqm58"]
+script = ExtResource("3_jhr64")
+question_string = "Red Question 1"
+left_answer_string = "Correct"
+right_answer_string = "Incorrect"
+metadata/_custom_type_script = "uid://damv0gpmxa036"
+
+[sub_resource type="Resource" id="Resource_rolb0"]
+script = ExtResource("3_jhr64")
+question_string = "Red Question 2"
+left_answer_string = "Correct"
+right_answer_string = "Incorrect"
+correct_answer = 1
+metadata/_custom_type_script = "uid://damv0gpmxa036"
+
+[sub_resource type="Resource" id="Resource_raoho"]
+script = ExtResource("3_jhr64")
+question_string = "Red Question 3"
+left_answer_string = "Correct"
+right_answer_string = "Incorrect"
+metadata/_custom_type_script = "uid://damv0gpmxa036"
+
+[sub_resource type="Resource" id="Resource_2r4qd"]
+script = ExtResource("2_jhr64")
+id = 1
+name = "Team Red"
+color = Color(1, 0, 0, 1)
+questions = Array[ExtResource("3_jhr64")]([SubResource("Resource_yqm58"), SubResource("Resource_rolb0"), SubResource("Resource_raoho")])
+metadata/_custom_type_script = "uid://ca7rrq5fcl3ml"
+
+[sub_resource type="Resource" id="Resource_jhr64"]
+script = ExtResource("3_jhr64")
+question_string = "Blue Question 1"
+left_answer_string = "Correct"
+right_answer_string = "Incorrect"
+correct_answer = 1
+metadata/_custom_type_script = "uid://damv0gpmxa036"
+
+[sub_resource type="Resource" id="Resource_4oi1i"]
+script = ExtResource("3_jhr64")
+question_string = "Blue Question 2"
+left_answer_string = "Correct"
+right_answer_string = "Incorrect"
+metadata/_custom_type_script = "uid://damv0gpmxa036"
+
+[sub_resource type="Resource" id="Resource_e1k00"]
+script = ExtResource("3_jhr64")
+question_string = "Blue Question 3"
+left_answer_string = "Correct"
+right_answer_string = "Incorrect"
+correct_answer = 1
+metadata/_custom_type_script = "uid://damv0gpmxa036"
+
+[sub_resource type="Resource" id="Resource_vt7lq"]
+script = ExtResource("2_jhr64")
+id = 2
+name = "Team Blue"
+color = Color(0, 0, 1, 1)
+questions = Array[ExtResource("3_jhr64")]([SubResource("Resource_jhr64"), SubResource("Resource_4oi1i"), SubResource("Resource_e1k00")])
+metadata/_custom_type_script = "uid://ca7rrq5fcl3ml"
+
+[resource]
+script = ExtResource("1_bhaot")
+teams = Array[ExtResource("2_jhr64")]([SubResource("Resource_2r4qd"), SubResource("Resource_vt7lq")])
+metadata/_custom_type_script = "uid://c72hvg43lbvl8"
