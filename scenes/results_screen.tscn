@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c02011oliw4j1"]
 
 [ext_resource type="Script" uid="uid://be2auxdr5rffm" path="res://scripts/results_screen.gd" id="1_fqf1x"]
+[ext_resource type="PackedScene" uid="uid://bp6u0j0q436i0" path="res://scenes/question_label.tscn" id="2_j5vbe"]
 
 [node name="ResultsScreen" type="Control" unique_id=584599422]
 layout_mode = 3
@@ -58,3 +59,18 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 240
 text = "X"
 vertical_alignment = 1
+
+[node name="TitleBackground" type="ColorRect" parent="." unique_id=1506556908]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 90.0
+offset_right = 1820.0
+offset_bottom = 390.0
+color = Color(0.039215688, 0.039215688, 0.039215688, 0.39215687)
+
+[node name="TitleLabel" parent="." unique_id=343454502 instance=ExtResource("2_j5vbe")]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 90.0
+offset_right = 1820.0
+offset_bottom = 390.0
