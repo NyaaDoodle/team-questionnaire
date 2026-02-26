@@ -1,5 +1,7 @@
 class_name GameManager extends Node
 
+enum VictoryState { LeftTeamWon, RightTeamWon, Tie }
+
 @export var _game_data: GameData
 @onready var _screen_manager: ScreenManager = $ScreenManager
 
@@ -88,17 +90,21 @@ func _start_next_turn() -> void:
 func _ask_team_question() -> void:
 	if _current_team.has_questions_left():
 		var current_question: Question = _current_team.get_next_question()
-		_screen_manager.show_question_screen(current_question, _current_team.color)
+		_screen_manager.show_question_screen(current_question, _current_team.color, _current_team.direction)
 
 func _show_results_screen() -> void:
-	_screen_manager.show_results_screen(_left_team.score, _right_team.score, Color.BLACK)
+	_screen_manager.show_results_screen(_left_team, _right_team)
+
+func _decide_winning_team() -> VictoryState:
+	if _left_team.score == _right_team.score:
+		return VictoryState.Tie
+	elif _left_team.score > _right_team.score:
+		return VictoryState.LeftTeamWon
+	else:
+		return VictoryState.RightTeamWon
 
 func end_game() -> void:
 	_remove_connections_in_screen_manager()
+	var victory_state: VictoryState = _decide_winning_team()
 	_screen_manager.results_screen_closed.connect(_exit_program)
-	var win_text: String = ""
-	if _left_team.score == _right_team.score:
-		win_text = "It is a draw!"
-	else:
-		win_text = "The winner is %s!" % (_left_team.name if _left_team.score > _right_team.score else _right_team.name)
-	_screen_manager.show_results_screen(_left_team.score, _right_team.score, Color.BLACK, win_text)
+	_screen_manager.show_final_results_screen(_left_team, _right_team, victory_state)

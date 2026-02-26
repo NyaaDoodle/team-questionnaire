@@ -2,11 +2,41 @@
 
 [ext_resource type="Script" uid="uid://c6md8xh75ixal" path="res://scripts/background_panel.gd" id="1_15me2"]
 
-[node name="BackgroundPanel" type="Panel" unique_id=1545657533]
+[node name="BackgroundPanel" type="Control" unique_id=1552563998]
 z_index = -10
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_15me2")
+
+[node name="StaticPanel" type="ColorRect" parent="." unique_id=428933522]
+z_index = -20
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LeftPanel" type="ColorRect" parent="." unique_id=973561329]
+z_index = -10
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+grow_vertical = 2
+color = Color(1, 0, 0, 1)
+
+[node name="RightPanel" type="ColorRect" parent="." unique_id=1534403620]
+z_index = -10
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0, 0, 1, 1)
