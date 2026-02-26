@@ -4,7 +4,40 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+            {
+            // Default configuration
+            //"name": "GDScript: Launch Project",
+            //"type": "godot",
+            //"request": "launch",
+            //"project": "${workspaceFolder}",
+            //"debug_collisions": false,
+            //"debug_paths": false,
+            //"debug_navigation": false,
+            //"additional_options": ""
 
+            "name": "Launch on Windows",
+            "type": "godot",
+            "request": "launch",
+            "project": "${workspaceFolder}",
+            "address": "127.0.0.1",
+            "port": 6007,
+            "scene": "main",
+            "editor_path": "E:\\Moebius\\Programs\\Godot 4.6\\Godot_v4.6-stable_win64.exe",
+            // engine command line flags
+            "profiling": false,
+            "single_threaded_scene": false,
+            "debug_collisions": false,
+            "debug_paths": false,
+            "debug_navigation": false,
+            "debug_avoidance": false,
+            "debug_stringnames": false,
+            "frame_delay": 0,
+            "time_scale": 1.0,
+            "disable_vsync": false,
+            "fixed_fps": 60,
+            // anything else
+            "additional_options": ""
+        },
         {
             // Default configuration
             //"name": "GDScript: Launch Project",
@@ -16,14 +49,14 @@
             //"debug_navigation": false,
             //"additional_options": ""
 
-            "name": "Launch",
+            "name": "Launch on Linux",
             "type": "godot",
             "request": "launch",
             "project": "${workspaceFolder}",
             "address": "127.0.0.1",
             "port": 6007,
             "scene": "main",
-            "editor_path": "E:\\Moebius\\Programs\\Godot 4.6\\Godot_v4.6-stable_win64.exe",
+            "editor_path": "/usr/bin/godot",
             // engine command line flags
             "profiling": false,
             "single_threaded_scene": false,
