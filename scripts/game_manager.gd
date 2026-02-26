@@ -32,16 +32,16 @@ func _prepare_teams() -> void:
 
 func _check_teams_validity() -> bool:
 	if _left_team == null:
-		push_error("Left team is set to null")
+		push_error("GameManager._check_teams_validity: Left team is set to null")
 		return false
 	elif _left_team.direction != Team.Direction.LeftTeam:
-		push_error("Left team's direction is not set to LeftTeam")
+		push_error("GameManager._check_teams_validity: Left team's direction is not set to LeftTeam")
 		return false
 	elif _right_team == null:
-		push_error("Right team is set to null")
+		push_error("GameManager._check_teams_validity: Right team is set to null")
 		return false
 	elif _right_team.direction != Team.Direction.RightTeam:
-		push_error("Right team's direction is not set to RightTeam")
+		push_error("GameManager._check_teams_validity: Right team's direction is not set to RightTeam")
 		return false
 	return true
 

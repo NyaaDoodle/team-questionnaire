@@ -15,12 +15,11 @@ func _input(event: InputEvent) -> void:
 	if is_answer_chosen and event.is_action_pressed("close_question_screen"):
 		requested_close.emit()
 
-func setup(question: Question, background_color: Color) -> void:
+func setup(question: Question) -> void:
 	_set_labels(question.question_string,
 	 question.left_answer_string,
 	 question.right_answer_string)
 	_set_buttons(question.correct_answer)
-	change_background_color(background_color)
 
 func _set_labels(question_string: String,
 				left_button_string: String,
