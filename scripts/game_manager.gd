@@ -3,16 +3,11 @@ class_name GameManager extends Node
 @export var _game_data: GameData
 @onready var _screen_manager: ScreenManager = $ScreenManager
 
-var _teams: Array[Team]:
-	set(value):
-		_game_data.teams = value
-	get:
-		return _game_data.teams
-
-var _turn_queue: TurnQueue
+var _left_team: Team = null
+var _right_team: Team = null
+var _current_team: Team = null
 
 func _ready() -> void:
-	_prepare_connections_in_screen_manager()
 	_start_game()
 
 func _input(event: InputEvent) -> void:
@@ -23,11 +18,32 @@ func _exit_program() -> void:
 	get_tree().quit()
 
 func _start_game() -> void:
+	_prepare_connections_in_screen_manager()
 	_prepare_teams()
-	_start_next_turn()
+	if _check_teams_validity():
+		_start_next_turn()
+	else:
+		_exit_program()
 
 func _prepare_teams() -> void:
-	_turn_queue = TurnQueue.new(_game_data.teams)
+	_left_team =  _game_data.left_team
+	_right_team = _game_data.right_team
+	_current_team = _left_team
+
+func _check_teams_validity() -> bool:
+	if _left_team == null:
+		push_error("Left team is set to null")
+		return false
+	elif _left_team.direction != Team.Direction.LeftTeam:
+		push_error("Left team's direction is not set to LeftTeam")
+		return false
+	elif _right_team == null:
+		push_error("Right team is set to null")
+		return false
+	elif _right_team.direction != Team.Direction.RightTeam:
+		push_error("Right team's direction is not set to RightTeam")
+		return false
+	return true
 
 func _prepare_connections_in_screen_manager() -> void:
 	_screen_manager.question_screen_closed.connect(_on_question_screen_closed)
@@ -46,42 +62,43 @@ func _on_question_screen_closed() -> void:
 	_show_results_screen()
 
 func _on_results_screen_closed() -> void:
-	_turn_queue.move_to_next_team()
+	_move_to_next_team()
 	_start_next_turn()
 
 func _on_correct_answer_chosen() -> void:
-	var current_team: Team = _turn_queue.get_current_team()
-	if current_team != null:
-		current_team.score += 1
+	_current_team.score += 1
+
+func _move_to_next_team():
+	_current_team = _left_team if (_current_team == _right_team or _current_team == null) else _right_team
+
+func _is_any_team_have_questions():
+	return _left_team.has_questions_left() || _right_team.has_questions_left()
 
 func _start_next_turn() -> void:
-	if _turn_queue.is_empty():
+	if not _is_any_team_have_questions():
 		end_game()
 	else:
-		var current_team: Team = _turn_queue.get_current_team()
-		if current_team.has_questions_left():
-			_ask_team_question(current_team)
+		if _current_team.has_questions_left():
+			_ask_team_question()
 		else:
-			_turn_queue.remove_current_team()
+			_move_to_next_team()
 			_start_next_turn()
 		
 
-func _ask_team_question(current_team: Team) -> void:
-	if current_team.has_questions_left():
-		var current_question: Question = current_team.get_next_question()
-		_screen_manager.show_question_screen(current_question, current_team.color)
+func _ask_team_question() -> void:
+	if _current_team.has_questions_left():
+		var current_question: Question = _current_team.get_next_question()
+		_screen_manager.show_question_screen(current_question, _current_team.color)
 
 func _show_results_screen() -> void:
-	_screen_manager.show_results_screen(_teams[0].score, _teams[1].score, Color.BLACK)
+	_screen_manager.show_results_screen(_left_team.score, _right_team.score, Color.BLACK)
 
 func end_game() -> void:
 	_remove_connections_in_screen_manager()
 	_screen_manager.results_screen_closed.connect(_exit_program)
-	var left_team_score = _teams[0].score
-	var right_team_score = _teams[1].score
-	var win_text = ""
-	if left_team_score == right_team_score:
+	var win_text: String = ""
+	if _left_team.score == _right_team.score:
 		win_text = "It is a draw!"
 	else:
-		win_text = "The winner is %s!" % (_teams[0].name if left_team_score > right_team_score else _teams[1].name)
-	_screen_manager.show_results_screen(_teams[0].score, _teams[1].score, Color.BLACK, win_text)
+		win_text = "The winner is %s!" % (_left_team.name if _left_team.score > _right_team.score else _right_team.name)
+	_screen_manager.show_results_screen(_left_team.score, _right_team.score, Color.BLACK, win_text)

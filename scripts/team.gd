@@ -1,10 +1,12 @@
 class_name Team extends Resource
 
-@export var id: int = 0
+enum Direction { LeftTeam, RightTeam }
+
+@export var direction: Direction = Direction.LeftTeam
 @export var name: String = ""
 @export var color: Color = Color.BLACK
 @export var questions: Array[Question] = []
-@export var score: int = 0
+var score: int = 0
 var _current_question_index: int = 0
 
 func has_questions_left() -> bool:
