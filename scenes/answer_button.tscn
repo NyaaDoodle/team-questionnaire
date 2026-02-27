@@ -1,8 +1,27 @@
 [gd_scene format=3 uid="uid://ceupqo10wixr6"]
 
+[ext_resource type="StyleBox" uid="uid://bxuv7ekbl4pc4" path="res://resources/answer_button_stylebox.tres" id="1_5501u"]
+[ext_resource type="Script" uid="uid://coxjkdaxqongq" path="res://scripts/answer_button.gd" id="1_afn2s"]
+[ext_resource type="StyleBox" uid="uid://bw8vsk4b42glb" path="res://resources/answer_button_hover_stylebox.tres" id="2_57cwc"]
+[ext_resource type="AudioStream" uid="uid://dmw3l5keeuu26" path="res://assets/sounds/32260__moxobna__smallcrowd.wav" id="2_tfjwn"]
+[ext_resource type="AudioStream" uid="uid://boii43sewnshr" path="res://assets/sounds/124996__phmiller42__aww.wav" id="3_5501u"]
+
 [node name="AnswerButton" type="Button" unique_id=158550015]
 offset_right = 800.0
 offset_bottom = 300.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = ExtResource("1_5501u")
+theme_override_styles/pressed = ExtResource("1_5501u")
+theme_override_styles/hover = ExtResource("2_57cwc")
+theme_override_styles/disabled = ExtResource("1_5501u")
+theme_override_styles/focus = ExtResource("1_5501u")
 text = "Text"
+script = ExtResource("1_afn2s")
+_correct_answer_sfx = ExtResource("2_tfjwn")
+_wrong_answer_sfx = ExtResource("3_5501u")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=516803288]
+bus = &"SFX"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

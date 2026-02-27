@@ -9,6 +9,7 @@ signal wrong_answer_chosen
 @export var _question_screen_scene: PackedScene
 
 @onready var _background_panel: BackgroundPanel = $BackgroundPanel
+@onready var _victory_audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var _current_screen: GameScreen
 
@@ -54,6 +55,7 @@ func show_final_results_screen(left_team: Team, right_team: Team, victory_state:
 			win_text = "The winner is %s!" % right_team.name
 			_background_panel.slide_switch_to_right_panel(right_team.color)
 	_spawn_results_screen(left_team, right_team, win_text)
+	_victory_audio_player.play()
 	
 func show_question_screen(question: Question, background_color: Color, direction: Team.Direction) -> void:
 	_slide_change_background(background_color, direction)
